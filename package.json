@@ -1,0 +1,66 @@
+{
+  "name": "@polymarkets/clob-client-v2",
+  "description": "TypeScript client for Polymarket's CLOB",
+  "version": "1.0.4",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "web3",
+    "crypto",
+    "cryptocurrency",
+    "sdk",
+    "polymarket",
+    "typescript",
+    "javascript",
+    "blockchain",
+    "ethereum"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/polymarket-dev/clob-client-v2"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.8.0",
+    "@ethersproject/wallet": "^5.8.0",
+    "axios": "^1.0.0",
+    "browser-or-node": "^3.0.0",
+    "tslib": "^2.8.1",
+    "viem": "^2.46.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.5",
+    "@types/node": "^22.19.11",
+    "dotenv": "^17.3.1",
+    "ethers": "^5.8.0",
+    "husky": "^9.1.7",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2",
+    "vitest": "^4.0.15",
+    "ws": "^8.18.3"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "biome check ./src ./tests",
+    "format": "biome check --write ./src ./tests",
+    "deploy": "pnpm build && npm publish",
+    "test": "vitest run"
+  }
+}
